@@ -10,14 +10,16 @@ const stats = [
   {
     num: 10,
     text: "Million app downloads",
+    suffix: "+",
   },
   {
-    num: 8,
-    text: "Technologies mastered",
+    num: 2,
+    text: "Certifications",
   },
   {
-    num: 500,
-    text: "Code commits",
+    num: 844,
+    text: "Global Hack The Box Ranking",
+    prefix: "#",
   },
 ];
 
@@ -37,6 +39,8 @@ const Stats = () => {
                   duration={5}
                   delay={2}
                   className="text-4xl xl:text-6xl font-extrabold"
+                  prefix={item.prefix}
+                  suffix={item.suffix}
                 />
                 <p
                   className={`${

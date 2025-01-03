@@ -1,12 +1,14 @@
 import Link from "next/link";
 
-import { FaGithub, FaLinkedinIn, FaYoutube, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { LuBox } from "react-icons/lu";
+import { SiLeetcode } from "react-icons/si";
 
 const socials = [
   { icon: <FaGithub />, path: "https://github.com/whoisdominic" },
   { icon: <FaLinkedinIn />, path: "https://www.linkedin.com/in/dominiccobb/" },
-  // { icon: <FaYoutube />, path: "" },
-  // { icon: <FaTwitter />, path: "" },
+  { icon: <LuBox />, path: "https://app.hackthebox.com/users/393536" },
+  { icon: <SiLeetcode />, path: "https://leetcode.com/u/whoisdominic/" },
 ];
 
 const Social = ({ containerStyles, iconStyles }) => {
@@ -14,7 +16,12 @@ const Social = ({ containerStyles, iconStyles }) => {
     <div className={containerStyles}>
       {socials.map((item, index) => {
         return (
-          <Link key={index} href={item.path} className={iconStyles}>
+          <Link
+            key={index}
+            href={item.path}
+            className={iconStyles}
+            target="_blank"
+          >
             {item.icon}
           </Link>
         );

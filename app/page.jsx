@@ -19,7 +19,7 @@ const Home = () => {
               <span className="text-accent">Dominic Cobb</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              I&apos;m a software developer specializing in building,
+              I&apos;m a software developer specializing in building
               high-quality mobile and web applications.
             </p>
             {/* btn and socials */}

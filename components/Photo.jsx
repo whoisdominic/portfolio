@@ -24,7 +24,6 @@ const Photo = () => {
         >
           <video
             src="/assets/EmojiMovie.mov"
-            priority
             alt=""
             autoPlay
             loop

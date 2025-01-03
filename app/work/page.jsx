@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-
+import { notFound } from "next/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
@@ -56,6 +56,8 @@ const projects = [
 ];
 
 const Work = () => {
+  return notFound();
+
   const [project, setProject] = useState(projects[0]);
 
   const handleSlideChange = (swiper) => {
