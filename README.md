@@ -1,9 +1,7 @@
 # Dominic Cobb's Portfolio
 
-```bash
-yarn dev
-```
+Install the dependencies and start the server.
 
 ```bash
-yarn dev
+yarn install && yarn dev
 ```

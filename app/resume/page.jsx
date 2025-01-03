@@ -14,8 +14,10 @@ import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 // about data
 const about = {
   title: "About me",
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+  description: [
+    "Born and raised in Bellevue Washington, a stone's throw away from a little company called Microsoft. I've always been fascinated with technology and how it can change the world!",
+    "In my spare time I enjoy playing Golf ⛳️, spending time with my family, and following the NHL (Go Kraken!) 🏒",
+  ],
   info: [
     {
       fieldName: "Name",
@@ -23,15 +25,11 @@ const about = {
     },
     {
       fieldName: "Phone",
-      fieldValue: "(+40) 321 654 678",
+      fieldValue: "Upon Request",
     },
     {
       fieldName: "Experience",
-      fieldValue: "12+ Years",
-    },
-    {
-      fieldName: "Skype",
-      fieldValue: "luke.01",
+      fieldValue: "5+ Years",
     },
     {
       fieldName: "Nationality",
@@ -39,7 +37,7 @@ const about = {
     },
     {
       fieldName: "Email",
-      fieldValue: "luke.01@gmail.com",
+      fieldValue: "him@dominiccobb.ai",
     },
     {
       fieldName: "Freelance",
@@ -47,7 +45,7 @@ const about = {
     },
     {
       fieldName: "Languages",
-      fieldValue: "English, Spanish",
+      fieldValue: "English, Spanish, Urdu",
     },
   ],
 };
@@ -56,38 +54,34 @@ const about = {
 const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My experience",
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+  description: [
+    "Proven track record of leading teams, driving technical transformations, and implementing best practices in software architecture, testing, and DevOps",
+  ],
   items: [
     {
-      company: "Tech Solutions Inc.",
-      position: "Full Stack Developer",
-      duration: "2022 - Present",
+      company: "Yum Brands",
+      position: "Software Engineer",
+      duration: "2023 - Present",
     },
     {
-      company: "Web Design Studio",
-      position: "Front-End Developer Intern",
+      company: "Spark (Freelance)",
+      position: "Lead Developer",
+      duration: "Ongoing",
+    },
+    {
+      company: "General Assembly",
+      position: "Lead SWE instructor",
       duration: "Summer 2021",
     },
     {
-      company: "E-commerce Startup",
-      position: "Freelance Web Developer",
+      company: "Extra Card ",
+      position: "Senior Software Engineer",
       duration: "2020 - 2021",
     },
     {
-      company: "Tech Academy",
-      position: "Teaching Assistant",
+      company: "Seventh Ave",
+      position: "Lead Mobile Engineer",
       duration: "2019 - 2020",
-    },
-    {
-      company: "Digital Agency",
-      position: "UI/UX Designer",
-      duration: "2018 - 2019",
-    },
-    {
-      company: "Software Development Firm",
-      position: "Junior Developer",
-      duration: "2017 - 2018",
     },
   ],
 };
@@ -95,7 +89,7 @@ const experience = {
 // education data
 const education = {
   icon: "/assets/resume/cap.svg",
-  title: "My education",
+  title: "Education & Certifications",
   description:
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
   items: [
@@ -105,29 +99,14 @@ const education = {
       duration: "2023",
     },
     {
-      institution: "Codecademy",
-      degree: "Front-end Track",
-      duration: "2022",
+      institution: "General Assemly",
+      degree: " Software Engineering Immersive",
+      duration: "2020",
     },
     {
-      institution: "Online Course",
-      degree: "Programming Course",
-      duration: "2020 - 2021",
-    },
-    {
-      institution: "Tech Institute",
-      degree: "Certified Web Developer",
-      duration: "2019",
-    },
-    {
-      institution: "Design School",
-      degree: "Diploma in Graphic Design",
-      duration: "2016 - 2018",
-    },
-    {
-      institution: "Community College",
-      degree: "Associate Degree in Computer Science",
-      duration: "2014 - 2016",
+      institution: "Lake Washington Institute of Technology",
+      degree: " Mechanical Engineering (No Degree)",
+      duration: "2009 - 2012",
     },
   ],
 };
@@ -202,7 +181,9 @@ const Resume = () => {
         >
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
             <TabsTrigger value="experience">Experience</TabsTrigger>
-            <TabsTrigger value="education">Education</TabsTrigger>
+            <TabsTrigger value="education">
+              Education & Certifications
+            </TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About me</TabsTrigger>
           </TabsList>
@@ -213,9 +194,14 @@ const Resume = () => {
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
-                  {experience.description}
-                </p>
+                {experience.description.map((text) => (
+                  <p
+                    key={text}
+                    className="max-w-[600px] text-white/60 mx-auto xl:mx-0"
+                  >
+                    {text}
+                  </p>
+                ))}
                 <ScrollArea className="h-[400px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                     {experience.items.map((item, index) => {
@@ -312,9 +298,15 @@ const Resume = () => {
             >
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
-                  {about.description}
-                </p>
+
+                {about.description.map((text) => (
+                  <p
+                    key={text}
+                    className="max-w-[600px] text-white/60 mx-auto xl:mx-0"
+                  >
+                    {text}
+                  </p>
+                ))}
                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
                   {about.info.map((item, index) => {
                     return (
