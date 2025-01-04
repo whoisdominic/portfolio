@@ -1,6 +1,6 @@
-import { AIMessageChunk } from "@langchain/core/messages";
 import { ChatOpenAI } from "@langchain/openai";
-
+import { HumanMessage } from "@langchain/core/messages";
+import { BasePrompt } from "./prompts";
 class LLM {
   model?: ChatOpenAI;
   initialized = false;
@@ -19,8 +19,8 @@ class LLM {
     }
   }
 
-  async invoke(messages: string[]) {
-    return this.model?.invoke(messages);
+  async invoke(input: string) {
+    return this.model?.invoke([BasePrompt, new HumanMessage(input)]);
   }
 }
 

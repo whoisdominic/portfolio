@@ -1,9 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { WavingEmoji } from "./WavingEmoji";
-import { BasePrompt } from "../../app/api/ai/prompts";
 import { llm } from "../../app/api/ai/llm";
-import { HumanMessage } from "@langchain/core/messages";
 import { Message } from "./types";
 
 const initialMessages: Message[] = [
@@ -48,7 +46,7 @@ export const usePortfolioLLM = () => {
     setInput("");
     setThinking(true);
     try {
-      const messages = [BasePrompt, new HumanMessage(input)];
+      // const messages = [BasePrompt, new HumanMessage(input)];
 
       if (!llm.initialized) {
         throw new Error("LLM not initialized");

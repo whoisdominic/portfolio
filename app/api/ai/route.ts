@@ -1,4 +1,4 @@
-export async function POST(request: Request) {
+export async function POST() {
   return new Response(
     JSON.stringify({
       message: "Hello from Dominic's API!",
