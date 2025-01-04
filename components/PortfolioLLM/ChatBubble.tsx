@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { type Message } from "./types";
+import { Message } from "./types";
 
 export const ChatBubble: React.FC<Message> = ({ text, side, muted, extra }) => {
   useEffect(() => {
