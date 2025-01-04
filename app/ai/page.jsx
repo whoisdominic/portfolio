@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { PortfolioLLM } from "@/components/PortfolioLLM";
+import { PortfolioLLM } from "@/components/PortfolioLLM/PortfolioLLM";
 
 const Ai = () => {
   return (
