@@ -72,7 +72,7 @@ const about = {
 // experience data
 const experience = {
   icon: "/assets/resume/badge.svg",
-  title: "My experience",
+  title: "Experience",
   description: [
     "Proven track record of leading teams, driving technical transformations, and implementing best practices in software architecture, testing, and DevOps",
   ],
@@ -89,7 +89,7 @@ const experience = {
     },
     {
       company: "General Assembly",
-      position: "Lead SWE instructor",
+      position: "Lead SWE Instructor",
       duration: "Summer 2021",
     },
     {
@@ -109,8 +109,6 @@ const experience = {
 const education = {
   icon: "/assets/resume/cap.svg",
   title: "Education & Certifications",
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
   items: [
     {
       institution: "Online Course Platform",
