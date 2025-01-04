@@ -1,6 +1,9 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { WavingEmoji } from "./WavingEmoji";
+import { BasePrompt } from "./prompts";
+import { llm } from "./llm";
+import { HumanMessage } from "@langchain/core/messages";
 
 const initialMessages = [
   {
@@ -15,16 +18,6 @@ const initialMessages = [
     muted: false,
   },
 ];
-
-import { ChatOpenAI } from "@langchain/openai";
-import { BasePrompt } from "./prompts";
-import { HumanMessage, SystemMessage } from "@langchain/core/messages";
-
-const model = new ChatOpenAI({
-  model: "gpt-4",
-  apiKey: process.env.OPENAI_API_KEY,
-  maxRetries: 3,
-});
 
 export const usePortfolioLLM = () => {
   const [input, setInput] = useState("");
@@ -54,9 +47,13 @@ export const usePortfolioLLM = () => {
     setInput("");
     setThinking(true);
     try {
-      const messages = [new SystemMessage(BasePrompt), new HumanMessage(input)];
+      const messages = [BasePrompt, new HumanMessage(input)];
 
-      const res = await model.invoke(messages);
+      if (!llm.initialized) {
+        throw new Error("LLM not initialized");
+      }
+
+      const res = await llm.invoke(messages);
       setMessages((prev) => [
         ...prev,
         {

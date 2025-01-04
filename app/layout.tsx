@@ -17,7 +17,11 @@ export const metadata = {
   description: "Dominic Cobb's personal website",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body className={jetbrainsMono.variable}>
