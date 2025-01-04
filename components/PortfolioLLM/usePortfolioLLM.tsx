@@ -1,11 +1,12 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { WavingEmoji } from "./WavingEmoji";
-import { BasePrompt } from "./prompts";
-import { llm } from "./llm";
+import { BasePrompt } from "../../app/api/ai/prompts";
+import { llm } from "../../app/api/ai/llm";
 import { HumanMessage } from "@langchain/core/messages";
+import { Message } from "./types";
 
-const initialMessages = [
+const initialMessages: Message[] = [
   {
     text: "Hi, I'm, Dominic's Ai assistant! ",
     side: "left",
@@ -22,9 +23,9 @@ const initialMessages = [
 export const usePortfolioLLM = () => {
   const [input, setInput] = useState("");
   const [thinking, setThinking] = useState(false);
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState<Message[]>([]);
 
-  const bottomRef = useRef(null);
+  const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -53,15 +54,15 @@ export const usePortfolioLLM = () => {
         throw new Error("LLM not initialized");
       }
 
-      const res = await llm.invoke(messages);
-      setMessages((prev) => [
-        ...prev,
-        {
-          text: res.content,
-          side: "left",
-          muted: false,
-        },
-      ]);
+      // const res = await llm.invoke(messages);
+      // setMessages((prev) => [
+      //   ...prev,
+      //   {
+      //     text: res.content,
+      //     side: "left",
+      //     muted: false,
+      //   },
+      // ]);
     } catch (error) {
       console.error(error);
     } finally {

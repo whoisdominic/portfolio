@@ -1,8 +1,9 @@
 "use client";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { type Message } from "./types";
 
-export const ChatBubble = ({ message: { text, side, muted, extra } }) => {
+export const ChatBubble: React.FC<Message> = ({ text, side, muted, extra }) => {
   useEffect(() => {
     if (muted) return;
     // Play the notification sound when the bubble mounts
