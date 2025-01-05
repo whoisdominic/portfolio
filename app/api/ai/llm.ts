@@ -7,7 +7,7 @@ class LLM {
   constructor() {
     try {
       this.model = new ChatOpenAI({
-        model: "gpt-4",
+        model: "gpt-4o-mini",
         apiKey: process.env.OPENAI_API_KEY,
         maxRetries: 3,
       });
