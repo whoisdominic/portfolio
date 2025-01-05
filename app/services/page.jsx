@@ -29,7 +29,7 @@ const services = [
         href={"/ai"}
         className="text-secondary hover:text-accent hover:underline"
       >
-        Checkout this sites built in Ai assistant.
+        Checkout this site's built in Ai assistant.
       </Link>
     ),
   },
