@@ -22,8 +22,13 @@ const services = [
     num: "03",
     title: "Ai Development",
     description:
-      "Need a custom LLM model? A chatbot or an Ai assistant? I can help! Checkout this sites built in Ai assistant.",
+      "Need a custom LLM model? A chatbot or an Ai assistant? I can help! ",
     href: "",
+    link: (
+      <Link href={"/ai"} className="text-secondary hover:text-accent underline">
+        Checkout this sites built in Ai assistant.
+      </Link>
+    ),
   },
   {
     num: "04",
@@ -71,7 +76,10 @@ const Services = () => {
                   {service.title}
                 </h2>
                 {/* description */}
-                <p className="text-white/60">{service.description}</p>
+                <p className="text-white/60">
+                  {service.description}
+                  {service.link}
+                </p>
                 {/* border */}
                 <div className="border-b border-white/20 w-full"></div>
               </div>
