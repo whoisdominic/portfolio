@@ -25,7 +25,10 @@ const services = [
       "Need a custom LLM model? A chatbot or an Ai assistant? I can help! ",
     href: "",
     link: (
-      <Link href={"/ai"} className="text-secondary hover:text-accent underline">
+      <Link
+        href={"/ai"}
+        className="text-secondary hover:text-accent hover:underline"
+      >
         Checkout this sites built in Ai assistant.
       </Link>
     ),
