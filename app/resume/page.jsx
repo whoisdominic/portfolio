@@ -74,7 +74,7 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "Experience",
   description: [
-    "Proven track record of leading teams, driving technical transformations, and implementing best practices in software architecture, testing, and DevOps",
+    "Proven track record of leading teams, driving technical transformations, and implementing best practices in software architecture, testing, and DevOps.",
   ],
   items: [
     {

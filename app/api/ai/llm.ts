@@ -6,11 +6,11 @@ class LLM {
   initialized = false;
   constructor() {
     try {
-      // this.model = new ChatOpenAI({
-      //   model: "gpt-4",
-      //   apiKey: process.env.OPENAI_API_KEY,
-      //   maxRetries: 3,
-      // });
+      this.model = new ChatOpenAI({
+        model: "gpt-4",
+        apiKey: process.env.OPENAI_API_KEY,
+        maxRetries: 3,
+      });
       this.initialized = true;
     } catch (error) {
       console.error(error);

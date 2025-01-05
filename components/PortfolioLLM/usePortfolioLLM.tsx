@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { WavingEmoji } from "./WavingEmoji";
-import { llm } from "../../app/api/ai/llm";
 import { Message } from "./types";
 
 const initialMessages: Message[] = [
@@ -46,21 +45,27 @@ export const usePortfolioLLM = () => {
     setInput("");
     setThinking(true);
     try {
-      // const messages = [BasePrompt, new HumanMessage(input)];
+      const res = await fetch("/api/ai", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ prompt: input }),
+      });
 
-      if (!llm.initialized) {
-        throw new Error("LLM not initialized");
+      const data = await res.json();
+      if (!res.ok || !data.response) {
+        throw new Error("Failed to fetch response");
       }
 
-      // const res = await llm.invoke(messages);
-      // setMessages((prev) => [
-      //   ...prev,
-      //   {
-      //     text: res.content,
-      //     side: "left",
-      //     muted: false,
-      //   },
-      // ]);
+      setMessages((prev) => [
+        ...prev,
+        {
+          text: data.response,
+          side: "left",
+          muted: false,
+        },
+      ]);
     } catch (error) {
       console.error(error);
     } finally {
