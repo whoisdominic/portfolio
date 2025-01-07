@@ -6,6 +6,7 @@ const stats = [
   {
     num: 5,
     text: "Years of experience",
+    suffix: "+",
   },
   {
     num: 10,
