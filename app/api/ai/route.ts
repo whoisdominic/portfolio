@@ -4,7 +4,6 @@ export async function POST(request: Request): Promise<Response> {
   try {
     // Extract JSON content from the request body
     const requestData = await request.json();
-    console.log("Request Data:", requestData);
 
     if (!requestData || !requestData.prompt) throw new Error();
 
