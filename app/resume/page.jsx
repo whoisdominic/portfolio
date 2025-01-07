@@ -1,6 +1,7 @@
 "use client";
 // Icons
 import { FaHtml5, FaCss3, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
+import { FiDownload } from "react-icons/fi";
 import {
   SiMetasploit,
   SiBurpsuite,
@@ -20,6 +21,7 @@ import { BiLogoPostgresql } from "react-icons/bi";
 import { DiMongodb } from "react-icons/di";
 // End icons
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
 
 import {
   Tooltip,
@@ -247,6 +249,20 @@ const Resume = () => {
             </TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About me</TabsTrigger>
+            <a
+              href="/assets/Resume - Dominic Cobb 2025.pdf"
+              download
+              className="self-center pt-4"
+            >
+              <Button
+                variant="outline"
+                size="lg"
+                className="uppercase flex items-center gap-2"
+              >
+                <span>Download Resume</span>
+                <FiDownload className="text-xl" />
+              </Button>
+            </a>
           </TabsList>
 
           {/* content */}

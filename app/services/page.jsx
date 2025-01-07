@@ -9,21 +9,21 @@ const services = [
     title: "Mobile/Web Development",
     description:
       "With experience delivering apps at scale, I ensure your project meets the highest standards.",
-    href: "",
+    href: "/contact",
   },
   {
     num: "02",
     title: "Cloud Solutions",
     description:
       "Ready to scale with the power of the cloud? I design secure, cost-effective cloud architectures that grow with your business.",
-    href: "",
+    href: "/contact",
   },
   {
     num: "03",
     title: "Ai Development",
     description:
       "Need a custom LLM model? A chatbot or an Ai assistant? I can help! ",
-    href: "",
+    href: "/contact",
     link: (
       <Link
         href={"/ai"}
@@ -38,7 +38,7 @@ const services = [
     title: "Pentesting",
     description:
       "Concerned about security? I provide expert penetration testing to uncover vulnerabilities and fortify your systems against cyber threats.",
-    href: "",
+    href: "/contact",
   },
 ];
 
