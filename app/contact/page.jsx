@@ -40,7 +40,7 @@ const initialFormState = {
   firstName: "",
   lastName: "",
   email: "",
-  type: "",
+  service: "",
   message: "",
   phone: "",
 };
@@ -51,10 +51,10 @@ const Contact = () => {
 
   const formReady = useMemo(() => {
     return (
-      formData.firstname &&
-      formData.lastname &&
+      formData.firstName &&
+      formData.lastName &&
       formData.email &&
-      formData.type &&
+      formData.service &&
       formData.phone
     );
   }, [formData]);
@@ -170,7 +170,7 @@ const Contact = () => {
                 {/* select */}
                 <Select
                   onValueChange={(value) => {
-                    setFormData({ ...formData, type: value });
+                    setFormData({ ...formData, service: value });
                   }}
                 >
                   <SelectTrigger className="w-full">

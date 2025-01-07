@@ -16,7 +16,7 @@ export async function POST(request: Request): Promise<Response> {
     }
 
     // Prepare the email data
-    const msg: sgMail.MailDataRequired = {
+    const recipient: sgMail.MailDataRequired = {
       to: requestData.email,
       from: "him@dominiccobb.ai",
       templateId: process.env.EMAIL_TEMPLATE_ID,
@@ -29,8 +29,33 @@ export async function POST(request: Request): Promise<Response> {
       },
     };
 
+    const selfReciept: sgMail.MailDataRequired = {
+      to: "him@dominiccobb.ai", // Your own email address
+      from: "him@dominiccobb.ai", // Your verified sender email
+      subject: "New Contact Form Submission",
+      text: `
+        You received a new contact form submission:
+    
+        First Name: ${requestData.firstName}
+        Last Name: ${requestData.lastName}
+        Email: ${requestData.email}
+        Service: ${requestData.service}
+        Message: ${requestData.message || "No message provided"}
+      `,
+      html: `
+        <h1>New Contact Form Submission</h1>
+        <p><strong>First Name:</strong> ${requestData.firstName}</p>
+        <p><strong>Last Name:</strong> ${requestData.lastName}</p>
+        <p><strong>Email:</strong> ${requestData.email}</p>
+        <p><strong>Message:</strong> ${
+          requestData.message || "No message provided"
+        }</p>
+      `,
+    };
+
     // Send the email
-    await sgMail.send(msg);
+    await sgMail.send(recipient);
+    await sgMail.send(selfReciept);
 
     // Return a successful response
     return NextResponse.json(
