@@ -40,6 +40,7 @@ export async function POST(request: Request): Promise<Response> {
         Last Name: ${requestData.lastName}
         Email: ${requestData.email}
         Service: ${requestData.service}
+        Phone: ${requestData.phone || "No phone number provided"}
         Message: ${requestData.message || "No message provided"}
       `,
       html: `
@@ -47,6 +48,10 @@ export async function POST(request: Request): Promise<Response> {
         <p><strong>First Name:</strong> ${requestData.firstName}</p>
         <p><strong>Last Name:</strong> ${requestData.lastName}</p>
         <p><strong>Email:</strong> ${requestData.email}</p>
+        <p><strong>Service:</strong> ${requestData.service}</p>
+        <p><strong>Phone:</strong> ${
+          requestData.phone || "No phone number provided"
+        }</p>
         <p><strong>Message:</strong> ${
           requestData.message || "No message provided"
         }</p>
