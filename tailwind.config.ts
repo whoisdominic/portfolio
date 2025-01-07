@@ -1,10 +1,11 @@
 import type { Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 
 export default {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{js,jsx}",
-    "./components/**/*.{js,jsx}",
+    "./pages/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
     "./app/**/*.{js,jsx,ts,tsx}",
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
@@ -25,6 +26,7 @@ export default {
     },
     extend: {
       colors: {
+        ...colors, // Includes all default colors
         primary: "#001628",
         secondary: "#e9072b",
         tritary: "#355464",

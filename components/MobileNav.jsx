@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci";
 import { links } from "@/constants/links";
+import { Button } from "./ui/button";
 
 const MobileNav = () => {
   const pathname = usePathname();
@@ -24,6 +25,10 @@ const MobileNav = () => {
         </div>
         {/* nav */}
         <nav className="flex flex-col justify-center items-center gap-8">
+          <p className="text-5xl animate-bounce">👇🏾</p>
+          <Link href="/ai">
+            <Button>Ai 🧠</Button>
+          </Link>
           {links.map((link, index) => {
             return (
               <Link

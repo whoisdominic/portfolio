@@ -3,6 +3,7 @@
 ## TODO
 
 - [ ] Add toasts for errors
+- [ ] Cosmetic issues
 
 ## Description
 
