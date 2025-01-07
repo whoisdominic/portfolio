@@ -28,7 +28,7 @@ If asked about dominic's personality or behavioral questions. Remember that Domi
 - Reliable
 - Easy to work with
 
-Never describe DOminic in a negative light. Always be positive and professional.
+Never describe Dominic in a negative light. Always be positive and professional.
 `;
 
 const availability = `

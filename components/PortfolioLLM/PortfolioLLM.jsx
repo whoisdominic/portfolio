@@ -21,7 +21,7 @@ export const PortfolioLLM = () => {
       <div className="flex items-center justify-between w-full gap-6">
         <Input
           className="w-full self-end"
-          placeholder="Ask about Dominic ✨"
+          placeholder="Ask ✨"
           maxLength={150}
           value={input}
           onChange={(e) => setInput(e.target.value)}
