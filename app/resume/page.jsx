@@ -82,7 +82,7 @@ const experience = {
     {
       company: "Yum Brands",
       position: "Software Engineer",
-      duration: "2023 - Present",
+      duration: "Sept 2023 - Current",
     },
     {
       company: "Spark (Freelance)",
@@ -92,17 +92,17 @@ const experience = {
     {
       company: "General Assembly",
       position: "Lead SWE Instructor",
-      duration: "Summer 2021",
+      duration: "Sept 2022 - April 2023",
     },
     {
       company: "Extra Card ",
       position: "Senior Software Engineer",
-      duration: "2020 - 2021",
+      duration: "Apr 2022 - Sept 2022",
     },
     {
       company: "Seventh Ave",
       position: "Lead Mobile Engineer",
-      duration: "2019 - 2020",
+      duration: "Nov 2020 - April 2022",
     },
   ],
 };
@@ -367,8 +367,9 @@ const Resume = () => {
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
                 <div className="flex flex-row gap-4 flex-wrap ">
-                  {about.images.map((source) => (
+                  {about.images.map((source, index) => (
                     <motion.img
+                      key={index}
                       initial={{ opacity: 0 }}
                       animate={{
                         opacity: 1,
