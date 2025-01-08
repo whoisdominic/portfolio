@@ -16,7 +16,7 @@ const MobileNav = () => {
       </SheetTrigger>
       <SheetContent className="flex flex-col">
         {/* logo */}
-        <div className="mt-32 mb-40 text-center text-2xl">
+        <div className="mt-16 mb-20 text-center text-2xl">
           <Link href="/">
             <h1 className="text-4xl font-semibold">
               Dominic<span className="text-secondary">.</span>
@@ -25,7 +25,7 @@ const MobileNav = () => {
         </div>
         {/* nav */}
         <nav className="flex flex-col justify-center items-center gap-8">
-          <p className="text-5xl animate-bounce">👇🏾</p>
+          <p className="text-4xl md:text-5xl animate-bounce">👇🏾</p>
           <Link href="/ai">
             <Button>Ai 🧠</Button>
           </Link>
