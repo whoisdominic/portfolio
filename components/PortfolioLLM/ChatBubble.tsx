@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Message } from "./types";
 
@@ -14,6 +14,32 @@ export const ChatBubble: React.FC<Message> = ({ text, side, muted, extra }) => {
   }, [muted]);
   const bubbleAlignment = side === "left" ? "self-start" : " self-end";
   const bubbleColor = side === "left" ? "bg-accent" : "bg-tritary";
+  const hasLink = text.includes("[Schedule a call]");
+
+  const formattedText = useMemo(() => {
+    if (!hasLink)
+      return (
+        <p className={side === "left" ? "text-primary" : "text-white"}>
+          {text}
+        </p>
+      );
+
+    return text.split("[Schedule a call]").map((text, index) => (
+      <p
+        key={index}
+        className={side === "left" ? "text-primary" : "text-white"}
+      >
+        <span key={index}>
+          {text}
+          {index === 0 && (
+            <a href="/contact" className="underline text-secondary">
+              Schedule a call
+            </a>
+          )}
+        </span>
+      </p>
+    ));
+  }, [hasLink, side, text]);
 
   return (
     <motion.div
@@ -24,7 +50,7 @@ export const ChatBubble: React.FC<Message> = ({ text, side, muted, extra }) => {
       }}
       className={`inline-flex ${bubbleAlignment} px-4 rounded-md p-4 text-base items-center ${bubbleColor} sm:max-w-sm md:max-w-lg lg:max-w-xl`}
     >
-      <p className={side === "left" ? "text-primary" : "text-white"}>{text}</p>
+      {formattedText}
       {extra}
     </motion.div>
   );
