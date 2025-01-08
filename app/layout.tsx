@@ -6,6 +6,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={jetbrainsMono.variable}>
         <Header />
+        <GoogleAnalytics measurementId="G-3DDB8Q0WXZ" />
         <StairTransition />
         <PageTransition>{children}</PageTransition>
         <Analytics />
