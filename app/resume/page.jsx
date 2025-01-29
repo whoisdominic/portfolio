@@ -104,6 +104,11 @@ const experience = {
       position: "Lead Mobile Engineer",
       duration: "Nov 2020 - April 2022",
     },
+    {
+      company: "Knex Technology",
+      position: "Software Engineer (Intern)",
+      duration: "Jul 2019 - Nov 2020",
+    },
   ],
 };
 
