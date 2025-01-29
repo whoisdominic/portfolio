@@ -118,6 +118,11 @@ Conceptualized, coded, and maintained scalable, event-driven systems utilizing t
 Directed and participated in sprints, managing task allocation in an agile environment using Jira.
 Built CI/CD pipeline for iOS and Android platforms, employing Fastlane, TestFlight, and app stores.
 
+Knex Technology - Software Engineer (Intern)  		   	  	                            Jul 2019 - Nov 2020   
+As an engineering intern, I significantly contributed to improving UX/UI and frontend functionality across six cloud-based SaaS products. Under the mentorship of an Oracle ACE Director, I honed my skills in Oracle Cloud and enterprise architecture, gaining in-depth knowledge and experience in the field.
+Collaborated on projects utilizing key Oracle Cloud technologies, such as Compute, Oracle Database, APEX, API Gateway, Fusion Applications, and Oracle REST Data Services.
+Utilized front-end technologies like Oracle JET, and Android to develop interactive and responsive user interfaces, resulting in enhanced user experiences and a notable reduction in UI-related issues reported by
+
 Freelancing
 Spark – Real-Time Social Media Platform
 Led the design and development of a robust full-stack, real-time social media platform leveraging React Native, Nest.js, GraphQL, Redis, and MongoDB.
@@ -165,6 +170,7 @@ Here is a list of technologies Dominic Cobb has experience with:
 - Nessus
 - Ubuntu
 - MacOS
+- Ghidra
 `;
 
 export const BasePrompt = new SystemMessage(`
