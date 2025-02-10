@@ -24,7 +24,7 @@ const Home = () => {
             </p>
             {/* btn and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <a href="/assets/Resume - Dominic Cobb 2025.pdf" download>
+              <a href="/assets/Resume - Dominic Cobb.pdf" download>
                 <Button
                   variant="outline"
                   size="lg"

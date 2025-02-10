@@ -255,7 +255,7 @@ const Resume = () => {
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About me</TabsTrigger>
             <a
-              href="/assets/Resume - Dominic Cobb 2025.pdf"
+              href="/assets/Resume - Dominic Cobb.pdf"
               download
               className="self-center pt-4"
             >
